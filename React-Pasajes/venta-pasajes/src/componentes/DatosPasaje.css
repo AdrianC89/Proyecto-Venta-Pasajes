@@ -1,0 +1,42 @@
+.datos-pasaje {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.ruta {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Centrar el texto de la ruta */
+}
+
+.informacion-pasaje {
+    display: flex;
+    justify-content: space-between; /* Espacio entre cada elemento */
+    gap: 20px; /* Espacio entre los elementos */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si son muy anchos */
+}
+
+.informacion-pasaje p {
+    margin: 0;
+    font-size: 1em;
+    color: #555;
+    flex: 1 1 auto; /* Hace que los elementos ocupen el mismo espacio */
+    text-align: center;
+}
+
+.informacion-pasaje strong {
+    color: #000;
+}
+
+.informacion-pasaje p:nth-child(5) {
+    font-size: 1.2em;
+    color: #E63946; /* Color destacado para el precio */
+}
+

@@ -1,0 +1,18 @@
+.header {
+    background-color: #2c2f33; /* Color de fondo oscuro */
+    padding: 10px 20px;        /* Espaciado interno */
+    display: flex;
+    align-items: center;       /* Centrar verticalmente */
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;       /* Asegurar que el logo esté alineado verticalmente */
+  }
+  
+  .logo {
+    border-radius: 50%;        /* Redondear los bordes para hacerlo circular */
+    height: 50px;              /* Tamaño del logo */
+    width: 50px;               /* Ancho del logo */
+  }
+  

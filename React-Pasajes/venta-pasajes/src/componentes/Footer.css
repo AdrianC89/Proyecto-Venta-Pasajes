@@ -1,0 +1,40 @@
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;            /* Usamos flexbox */
+    justify-content: space-around;  /* Distribuye las secciones de manera uniforme */
+    text-align: left;
+    flex-wrap: wrap;          /* Permite que los elementos se envuelvan en caso de ser necesarios */
+  }
+  
+  .footer-section {
+    width: 20%;               /* Ajusta este valor según lo que quieras lograr */
+    min-width: 150px;         /* Opcional: asegura que las secciones no se colapsen demasiado en pantallas pequeñas */
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul li a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section ul li a:hover {
+    color: #fff;
+  }
+  
