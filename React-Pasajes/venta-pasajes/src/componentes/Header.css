@@ -1,18 +1,20 @@
 .header {
-    background-color: #2c2f33; /* Color de fondo oscuro */
-    padding: 10px 20px;        /* Espaciado interno */
-    display: flex;
-    align-items: center;       /* Centrar verticalmente */
-  }
-  
-  .logo-container {
-    display: flex;
-    align-items: center;       /* Asegurar que el logo esté alineado verticalmente */
-  }
-  
-  .logo {
-    border-radius: 50%;        /* Redondear los bordes para hacerlo circular */
-    height: 50px;              /* Tamaño del logo */
-    width: 50px;               /* Ancho del logo */
-  }
-  
+  background-color: #2c2f33; /* Color de fondo oscuro */
+  padding: 10px 20px;        /* Espaciado interno */
+  display: flex;
+  align-items: center;       /* Centrar verticalmente */
+  width: 100vw;              /* Asegura que el header ocupe todo el ancho de la pantalla */
+  box-sizing: border-box;    /* Incluir el padding dentro del ancho total */
+  justify-content: space-between; /* Para distribuir mejor el contenido, si es necesario */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;       /* Asegurar que el logo esté alineado verticalmente */
+}
+
+.logo {
+  border-radius: 50%;        /* Redondear los bordes para hacerlo circular */
+  height: 50px;              /* Tamaño del logo */
+  width: 50px;               /* Ancho del logo */
+}

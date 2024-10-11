@@ -1,40 +1,42 @@
 .footer {
-    background-color: #222;
-    color: #fff;
-    padding: 20px 0;
-    display: flex;            /* Usamos flexbox */
-    justify-content: space-around;  /* Distribuye las secciones de manera uniforme */
-    text-align: left;
-    flex-wrap: wrap;          /* Permite que los elementos se envuelvan en caso de ser necesarios */
-  }
-  
-  .footer-section {
-    width: 20%;               /* Ajusta este valor según lo que quieras lograr */
-    min-width: 150px;         /* Opcional: asegura que las secciones no se colapsen demasiado en pantallas pequeñas */
-  }
-  
-  .footer-section h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-    color: #ccc;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-section ul li a {
-    color: #aaa;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footer-section ul li a:hover {
-    color: #fff;
-  }
-  
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+  flex-wrap: wrap;   /* Para que se envuelvan los elementos si no caben */
+}
+
+.footer-section {
+  display: flex;
+  align-items: center; /* Centra verticalmente los items */
+  gap: 20px;           /* Espaciado entre secciones */
+}
+
+.footer-section h4 {
+  margin-right: 15px;  /* Espacio a la derecha del título */
+  font-size: 16px;
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;       /* Alinea los ítems de la lista horizontalmente */
+  gap: 15px;           /* Espacio entre los ítems de la lista */
+}
+
+.footer-section ul li {
+  margin-bottom: 0;    /* Remueve el margen inferior */
+}
+
+.footer-section ul li a {
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}

@@ -1,8 +1,19 @@
-.contenedorPrincipal{
+.contenedorPadre {
+  display: flex;
+  justify-content: space-between;  /* Espacio entre los divs */
+  align-items: flex-start;         /* Ajusta si necesitas alinearlos verticalmente */
+  width: 100%;                     /* Ocupa el ancho total de la pantalla */
+  min-height: 80vh;
+}
+
+.contenedorPrincipal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 50%;                /* Ocupa la mitad del ancho de la pantalla */
   min-height: 80vh;
+  box-sizing: border-box;     /* Asegura que el padding no exceda el 50% del ancho */
 }
+
+
