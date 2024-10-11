@@ -22,7 +22,7 @@ export const register = async (req, res) => {
         username: userSaved.username,
         email: userSaved.email,
         createdAt: userSaved.createdAt,
-        updatedAt: userSaved.updateAt
+        updatedAt: userSaved.updatedAt
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -48,7 +48,7 @@ export const login = async (req, res) => {
         username: userFound.username,
         email: userFound.email,
         createdAt: userFound.createdAt,
-        updatedAt: userFound.updateAt
+        updatedAt: userFound.updatedAt
         });
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -62,6 +62,17 @@ export const logout = (req, res) => {
     return res.sendStatus(200)
 }
 
-export const profile = (req,res) => {
-    res.send ("Profile")
+export const profile = async (req,res) => {
+    const userFound = await User.findById(req.user.id);
+
+    if (!userFound) return res.status(400).json({ message: "Usuario no encontrado" });
+
+    return res.json({
+        id: userFound._id,
+        username: userFound.username,
+        email: userFound.email,
+        createdAt: userFound.createdAt,
+        updatedAt: userFound.updatedAt
+    })
+
 }
