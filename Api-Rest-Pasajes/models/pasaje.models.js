@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const PasajeSchema = new mongoose.Schema({
-    origen: { type: String, required: true },
+  origen: { type: String, required: true },
   destino: { type: String, required: true },
   fechaSalida: { type: Date, required: true },
   fechaLlegada: { type: Date },
