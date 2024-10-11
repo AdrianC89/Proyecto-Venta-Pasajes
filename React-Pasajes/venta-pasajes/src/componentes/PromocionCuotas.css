@@ -1,0 +1,31 @@
+.promocion-container {
+    background-color: #f0f0f0; /* Gris clarito */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .promocion-container h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .promocion-container p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .logos img {
+    height: 50px; /* Ajusta el tamaño de los logos */
+    margin: 0 10px;
+  }
+  
