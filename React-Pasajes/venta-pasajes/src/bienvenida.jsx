@@ -1,18 +1,18 @@
 //aca va el useeffect y debemos instalar libreria cors
 
-import BotonSoy from "./BotonSoy";
-import './Bienvenida.css'
+import Botones from "./Botones";
+import './bienvenida.css';
+{/*import Iniciarsesion from './IniciarSesion.jsx';
+import Destinos from './Destinos.jsx'*/}
 
 export default function Bienvenida(){
     return (
-        <div className="contenedorBienvenida">
-            <h2 className="tituloBienvenida">Te damos la bienvenida a viajar en ruta 3!</h2>
+        <header className="contenedorBienvenida">
+            <h2 className="tituloBienvenida">¡Te Damos la Bienvenida!</h2>
             <div className="contenedorBotones">
-                <BotonSoy 
-                nombre="ViajesEnBus " color="orange" ruta="./formulario.jsx" />
-                <BotonSoy 
-                nombre=" " color="yellow" ruta="/"/>
+                <Botones className="boton" texto ="Inicio Sesión " ruta= "./IniciarSesion.jsx" />
+                <Botones className="boton" texto ="Destinos" ruta= "/Destinos.jsx"/>
             </div>
-        </div>
+        </header>
     )
 }

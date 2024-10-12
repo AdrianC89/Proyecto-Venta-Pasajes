@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Bienvenida from './bienvenida.jsx';
 import TicketForm from './formulario.jsx';
 import Footer from './footer.jsx';
+//import FilterPasajes from './filtrado.jsx';
 
 import './App.css'
 
@@ -11,8 +13,10 @@ function App() {
     <Router>
       <div className='contenedorPrincipal'>
         <Routes>
+          <Route path='/bienvenida' element = { <Bienvenida/>}/>
           <Route path="/buscarpasajes" element={<TicketForm/>} />
           <Route path="/footer" element={<Footer/>} />
+          {/*<Route path="/filtrar" element={< FilterPasajes/>} />*/}
           {/*<div>
               <a href="https://vitejs.dev" target="_blank">
                 <img src={viteLogo} className="logo" alt="Vite logo" />
