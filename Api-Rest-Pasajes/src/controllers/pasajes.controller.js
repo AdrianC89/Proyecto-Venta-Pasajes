@@ -23,14 +23,15 @@ export const createPasaje = async (req, res) => {
 
 // Obtener todos los pasajes (o filtrar por fecha/destino)
 export const getPasajes = async (req, res) => {
-  try {
+  
     const { fechaSalida, destino } = req.query;
-    const filters = {};
+    const filter = {};
     
-    if (fechaSalida) filters.fechaSalida = new Date(fechaSalida);
-    if (destino) filters.destino = destino;
+    if (fechaSalida) {filter.fechaSalida = { $gte: new Date(fecha) }}
+    if (destino) {filter.destino = new RegExp(destino, 'i'); }
 
-    const pasajes = await Pasaje.find(filters); 
+  try {
+    const pasajes = await Pasaje.find(filter); 
     res.json(pasajes);
   } catch (error) {
     res.status(500).json({ message: error.message });
