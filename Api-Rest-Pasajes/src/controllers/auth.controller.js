@@ -7,6 +7,9 @@ export const register = async (req, res) => {
 
     try {
 
+        const userFound = await User.findOne({email})
+        if (userFound) return res.status(400).json(["El email ya está en uso"]);
+
         const passwordHash = await bcrypt.hash(password, 10)
         const newUser = new User({
             username,
@@ -63,7 +66,7 @@ export const logout = (req, res) => {
 }
 
 export const profile = async (req,res) => {
-    const userFound = await User.findById(req.user.id);
+    const userFound = await User.findById(req.user.id).populate('boletosComprados.pasaje');
 
     if (!userFound) return res.status(400).json({ message: "Usuario no encontrado" });
 
@@ -71,6 +74,7 @@ export const profile = async (req,res) => {
         id: userFound._id,
         username: userFound.username,
         email: userFound.email,
+        boletosComprados: userFound.boletosComprados,
         createdAt: userFound.createdAt,
         updatedAt: userFound.updatedAt
     })

@@ -21,18 +21,24 @@ const pasajeSchema = new mongoose.Schema({
   },
   precio: { 
     type: Number, 
-    required: true,  min: [0, 'El precio no puede ser negativo'] 
+    required: true,  
+    min: [0, 'El precio no puede ser negativo'] 
   },
   disponible: { 
     type: Boolean, 
-    default: true  // Estado de disponibilidad del pasaje
+    default: true  
   },
   asientosDisponibles: { 
     type: Number, 
     required: true,  
-    min: [0, 'Los asientos disponibles no pueden ser negativos'] // Validación para que no haya asientos negativos
-  }},{ 
+    min: [0, 'Los asientos disponibles no pueden ser negativos']
+  },
+  compradores: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'  // Referencia a los usuarios que han comprado boletos para este pasaje
+  }]
+}, { 
     timestamps: true 
-  })
+});
 
-export default mongoose.model('Pasaje', pasajeSchema)
+export default mongoose.model('Pasaje', pasajeSchema);

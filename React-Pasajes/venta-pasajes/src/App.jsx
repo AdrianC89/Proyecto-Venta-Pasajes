@@ -1,46 +1,26 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Bienvenida from './bienvenida.jsx';
-import TicketForm from './formulario.jsx';
-import Footer from './footer.jsx';
-//import FilterPasajes from './filtrado.jsx';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from './context/AuthContext'
 
-import './App.css'
+import RegisterPage from './pages/RegisterPage'
+import LoginPage from './pages/LoginPage'
+
 
 function App() {
-
   return (
-    <Router>
-      <div className='contenedorPrincipal'>
-        <Routes>
-          <Route path='/bienvenida' element = { <Bienvenida/>}/>
-          <Route path="/buscarpasajes" element={<TicketForm/>} />
-          <Route path="/footer" element={<Footer/>} />
-          {/*<Route path="/filtrar" element={< FilterPasajes/>} />*/}
-          {/*<div>
-              <a href="https://vitejs.dev" target="_blank">
-                <img src={viteLogo} className="logo" alt="Vite logo" />
-              </a>
-              <a href="https://react.dev" target="_blank">
-                <img src={reactLogo} className="logo react" alt="React logo" />
-              </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-              <button onClick={() => setCount((count) => count + 1)}>
-                count is {count}
-              </button>
-              <p>
-                Edit <code>src/App.jsx</code> and save to test HMR
-              </p>
-            </div>
-            <p className="read-the-docs">
-              Click on the Vite and React logos to learn more
-            </p>*/} 
-        </Routes>
-      </div>
-    </Router>
+    <AuthProvider>
+          <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<h1>Home Page</h1>} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/pasajes" element={<h1>Lista de Pasajes</h1>} />
+        <Route path="/crearpasaje" element={<h1>Crear Pasajes</h1>} />
+        <Route path="/pasajes/:id" element={<h1>Actualizar Pasaje</h1>} />
+        <Route path="/profile" element={<h1>Perfil</h1>} />
+
+      </Routes>
+    </BrowserRouter>
+    </AuthProvider>
   )
 }
-
 export default App
