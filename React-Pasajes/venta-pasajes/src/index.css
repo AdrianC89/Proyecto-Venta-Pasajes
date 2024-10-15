@@ -4,5 +4,9 @@
 
 body {
   background: #202020;
-  color: white
+  color: white;
+  background-image: url('../bus.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
