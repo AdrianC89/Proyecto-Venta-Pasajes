@@ -1,6 +1,7 @@
 import Pasaje from '../models/pasaje.models.js';
 import User from '../models/user.model.js';
 
+
 // Comprar boletos
 export const comprarBoletos = async (req, res) => {
   try {
@@ -79,37 +80,41 @@ export const getPasajeById = async (req, res) => {
   }
 };
 
-
-// Crear un pasaje (sin cambios)
+// Crear un pasaje
 export const createPasaje = async (req, res) => {
   const { origen, destino, fechaSalida, fechaLlegada, precio, asientosDisponibles } = req.body;
+  
+  // Cambia esta línea para que solo almacene el nombre del archivo
+  const imagen = req.file.filename; // Obtener solo el nombre del archivo, sin la ruta completa
 
   try {
-    const newPasaje = new Pasaje({
+    const nuevoPasaje = new Pasaje({
       origen,
       destino,
       fechaSalida,
       fechaLlegada,
       precio,
-      asientosDisponibles
+      asientosDisponibles,
+      // Guarda la ruta de la imagen en el formato correcto
+      imagen: `uploads/${imagen}` // Asegúrate de usar barras normales
     });
 
-    const pasajeSaved = await newPasaje.save();
-    res.status(201).json(pasajeSaved);
+    const savedPasaje = await nuevoPasaje.save();
+    res.status(201).json(savedPasaje);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-// Actualizar un pasaje (sin cambios significativos)
+// Actualizar un pasaje
 export const updatePasaje = async (req, res) => {
   const { id } = req.params;
-  const { origen, destino, fechaSalida, fechaLlegada, precio, asientosDisponibles, disponible } = req.body;
+  const { origen, destino, fechaSalida, fechaLlegada, precio, asientosDisponibles, disponible, imagen } = req.body; // Añade el campo imagen
 
   try {
     const pasajeUpdated = await Pasaje.findByIdAndUpdate(
       id,
-      { origen, destino, fechaSalida, fechaLlegada, precio, asientosDisponibles, disponible },
+      { origen, destino, fechaSalida, fechaLlegada, precio, asientosDisponibles, disponible, imagen }, // Incluye la imagen al actualizar
       { new: true }
     );
 
@@ -121,7 +126,7 @@ export const updatePasaje = async (req, res) => {
   }
 };
 
-// Eliminar un pasaje (sin cambios)
+// Eliminar un pasaje
 export const deletePasaje = async (req, res) => {
   const { id } = req.params;
 
