@@ -20,7 +20,7 @@ function LoginPage() {
                     </div>
                 ))
             }
-                <h1 className="text-2xl font-bold">Login</h1>
+                <h1 className="text-2xl font-bold">Iniciar Sesión</h1>
             <form onSubmit={onSubmit}>
                 <input
                     type="email"
@@ -43,7 +43,7 @@ function LoginPage() {
                 <button
                     type="submit"
                     className="bg-blue-500 text-white px-4 py-2 rounded-md w-full">
-                    Login
+                    Iniciar Sesión
                 </button>
             </form>
             <p className="flex gap-x-2 justify-between">
