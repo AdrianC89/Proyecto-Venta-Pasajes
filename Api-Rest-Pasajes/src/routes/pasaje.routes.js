@@ -7,7 +7,7 @@ import upload from '../middlewares/upload.js';
 const router = Router();
 
 // CRUD básico de pasajes
-router.post('/pasajes',authRequired, upload.single('imagen'), createPasaje);
+router.post('/pasajes', upload.single('imagen'), createPasaje);
 router.get('/pasajes', getPasajes);
 router.get('/pasajes/:id', getPasajeById);
 router.put('/pasajes/:id',authRequired, updatePasaje);

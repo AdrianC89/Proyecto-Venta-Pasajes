@@ -4,7 +4,8 @@ const Header = () => {
   return (
     <nav className="bg-gray-800 p-4 flex items-center justify-between w-full box-border">
       <div className="flex items-center">
-        <h1 className="text-2xl font-bold text-white">Viajes</h1>
+        {/* Reemplaza "Viajes" con un logo */}
+        <img src="../tandilbus.png" alt="Logo Viajes" className="h-20 w-auto" />
         <ul className="flex gap-x-4 ml-6">
           <li>
             <Link to="/" className="text-white hover:bg-gray-700 px-4 py-2 rounded">
