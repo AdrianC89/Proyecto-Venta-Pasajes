@@ -13,3 +13,14 @@ export const createPasaje = async (pasajeData) => {
         },
     });
 };
+
+export const comprarPasaje = async (id, cantidadBoletos) => {
+    return await axios.post(`http://localhost:3000/api/pasajes/${id}/comprar`, {
+        cantidadBoletos
+    });
+};
+
+// Obtener un pasaje por ID
+export const getPasajeById = async (id) => {
+    return await axios.get(`http://localhost:3000/api/pasajes/${id}`);
+};

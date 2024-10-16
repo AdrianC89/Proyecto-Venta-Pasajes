@@ -10,3 +10,52 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* DetallePasaje.css */
+
+.seats-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.seat {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.seat.available {
+  background-color: #fff;
+  color: #000;
+}
+
+.seat.occupied {
+  background-color: #ff4d4d;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-comprar {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-comprar:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
