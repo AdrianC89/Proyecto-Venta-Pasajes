@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createPasaje, getPasajes, getPasajeById, updatePasaje, deletePasaje, comprarBoletos } from '../controllers/pasajes.controller.js';
+import { createPasaje, getPasajes, getPasajeById, updatePasaje, deletePasaje, comprarBoletos} from '../controllers/pasajes.controller.js';
 import { authRequired } from '../middlewares/validateToken.js';
 import upload from '../middlewares/upload.js';
 
