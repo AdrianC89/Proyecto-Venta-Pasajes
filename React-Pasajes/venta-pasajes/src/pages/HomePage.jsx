@@ -1,22 +1,29 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import PromocionCuotas from '../components/PromocionCuotas';
+import AboutTandilBus from '../components/AboutTandilBus';
+
 
 
 const HomePage = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Incluimos el Header */}
-      <Header />
-      
+
+
       {/* Contenido Principal */}
       <main className="flex-grow">
         <h1>Bienvenido a la Página Principal</h1>
+        <div className="mb-10">
+        <PromocionCuotas />
+        </div>
+        
+        <div className="mb-10">
+        <AboutTandilBus />
+        </div>
+        
       </main>
       
-      {/* Incluimos el Footer */}
-      <Footer />
+
     </div>
   );
 };
