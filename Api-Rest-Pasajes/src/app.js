@@ -12,7 +12,8 @@ const app = express();
 //app.use(express.json()); // Middleware para parsear JSON
 
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'http://localhost:5173',
+    credentials: true
 }))
 app.use(morgan('dev'));
 app.use(express.json());
