@@ -11,6 +11,8 @@ import Perfil from "./pages/Perfil";
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+import ProtectedRoute from "./ProtectedRoute";
+
 function App() {
   return (
     <AuthProvider>
@@ -20,10 +22,13 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+
+              <Route element ={<ProtectedRoute/>}>
               <Route path="/pasajes" element={<ListaPasajes />} />
               <Route path="/crearpasaje" element={<CrearPasajes />} />
               <Route path="/pasajes/:id" element={<ActualizarPasajes />} />
               <Route path="/profile" element={<Perfil />} />
+              </Route>
             </Routes>
         
           <Footer />
