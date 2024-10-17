@@ -10,7 +10,7 @@ const PreguntasFrecuentes = () => {
         alt="Icono Preguntas Frecuentes"
         className="w-16 h-16 mb-4"
       />
-      <Link to="/preguntas-frecuentes">
+      <Link to="/preguntasfrecuentes">
         <h3 className="text-lg font-bold text-blue-700 hover:text-blue-500 cursor-pointer">
           PREGUNTAS FRECUENTES
         </h3>

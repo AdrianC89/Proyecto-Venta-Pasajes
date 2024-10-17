@@ -12,6 +12,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 import ProtectedRoute from "./ProtectedRoute";
+import PreguntasRespuestas from "./pages/PreguntasPage";
+import InformacionUtilPage from "./pages/InformacionUtilPage";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              <Route path="/preguntasfrecuentes" element={<PreguntasRespuestas />} />
+              <Route path="/informacionutil" element={<InformacionUtilPage />} />
 
               <Route element ={<ProtectedRoute/>}>
               <Route path="/pasajes" element={<ListaPasajes />} />
