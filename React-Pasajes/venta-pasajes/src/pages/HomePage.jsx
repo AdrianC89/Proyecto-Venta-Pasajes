@@ -5,6 +5,7 @@ import AboutTandilBus from '../components/AboutTandilBus';
 import InformacionUtil from '../components/InformacionUtil';
 import PreguntasFrecuentes from '../components/PreguntasFrecuentes';
 import PasajesEjemplo from '../components/PasajesEjemplo';
+import BuscadorPasajes from '../components/BuscadorPasaje';
 
 
 
@@ -15,15 +16,22 @@ const HomePage = () => {
 
       {/* Contenido Principal */}
       <main className="flex-grow">
-        <h1>Bienvenido a la Página Principal</h1>
         
-          <div className="flex justify-end">
-            <div className="w-1/2" >
-              <div className="mb-10">
-                <PromocionCuotas />
+          <div className="flex justify-between mt-8">
+              <div className="w-1/2 pr-4"> {/* Ajustamos un margen a la derecha para el espacio */}
+                  <div className="mb-10">
+                       <PromocionCuotas />
+                   </div>
               </div>
-           </div>
-         </div>
+
+              <div className="w-1/2 pl-4"> {/* Ajustamos un margen a la izquierda para el espacio */}
+                  <div className="mb-10">
+                        <BuscadorPasajes />
+                  </div>
+              </div>
+          </div>
+
+         
 
         <div className="mb-10">
         <AboutTandilBus />
