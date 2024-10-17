@@ -3,7 +3,7 @@ import dibujoBus from '../assets/bus.png';
 
 const AboutTandilBus = () => {
   return (
-    <div className="bg-blue-300 flex items-center justify-center py-10">
+    <div className="bg-blue-500 flex items-center justify-center py-10">
       <div className="max-w-4xl mx-auto text-white px-4 flex items-center">
         <div className="w-1/2">
         <img

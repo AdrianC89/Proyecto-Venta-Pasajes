@@ -77,32 +77,36 @@ function DetallePasaje() {
     };
 
     return (
-        <div className="detalle-pasaje">
-            <h1>Detalles del Pasaje</h1>
-            <img 
-                src={`http://localhost:3000/${pasaje.imagen}`} 
-                alt={`${pasaje.origen} a ${pasaje.destino}`} 
-                className="w-full h-64 object-cover rounded-md mb-4" 
-            />
-            <h2>{pasaje.origen} - {pasaje.destino}</h2>
-            <p>Salida: {new Date(pasaje.fechaSalida).toLocaleString()}</p>
-            <p>Llegada: {new Date(pasaje.fechaLlegada).toLocaleString()}</p>
-            <p>Precio: ${pasaje.precio}</p>
+        <div className="container mx-auto p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="detalle-pasaje p-6 max-w-lg mx-auto bg-white rounded-lg shadow-lg space-y-4">
+                    <h1 className="text-2xl font-semibold text-gray-900">Detalles del Pasaje</h1>
+                    <img 
+                        src={`http://localhost:3000/${pasaje.imagen}`} 
+                        alt={`${pasaje.origen} a ${pasaje.destino}`} 
+                        className="w-full h-48 object-cover rounded-md mb-4" 
+                    />
+                    <h2 className="text-xl font-semibold text-gray-700">{pasaje.origen} - {pasaje.destino}</h2>
+                    <p className="text-gray-800">Salida: {new Date(pasaje.fechaSalida).toLocaleString()}</p>
+                    <p className="text-gray-800">Llegada: {new Date(pasaje.fechaLlegada).toLocaleString()}</p>
+                    <p className="text-lg font-bold text-gray-900">Precio: ${pasaje.precio}</p>
 
-            <h3>Selecciona tus asientos:</h3>
-            <div className="seats-container">
-                {renderSeats()}
+                    <h3 className="text-lg font-medium text-gray-700">Selecciona tus asientos:</h3>
+                    <div className="seats-container grid grid-cols-4 gap-2">
+                        {renderSeats()}
+                    </div>
+
+                    <p className="text-gray-600">Asientos seleccionados: {selectedSeats.length}</p>
+
+                    <button 
+                        className="btn-comprar w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg mt-4 ${selectedSeats.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}" 
+                        onClick={handleComprar} 
+                        disabled={selectedSeats.length === 0}
+                    >
+                        Comprar Boletos
+                    </button>
+                </div>
             </div>
-
-            <p>Asientos seleccionados: {selectedSeats.length}</p>
-
-            <button 
-                className="btn-comprar" 
-                onClick={handleComprar} 
-                disabled={selectedSeats.length === 0}
-            >
-                Comprar Boletos
-            </button>
         </div>
     );
 }

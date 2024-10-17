@@ -12,13 +12,13 @@ const HomePage = () => {
 
       {/* Contenido Principal */}
       <main className="flex-grow">
-        <h1>Bienvenido a la Página Principal</h1>
-        <div className="mb-10">
-        <PromocionCuotas />
-        </div>
-        
+      
         <div className="mb-10">
         <AboutTandilBus />
+        </div>
+
+        <div className="mb-10">
+        <PromocionCuotas />
         </div>
         
       </main>
